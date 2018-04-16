@@ -9,38 +9,38 @@ This app replicates an online store such as Amazon or Ebay in order to show the 
 
 To begin, the app welcomes you and gives you two options: One to see a list of all of the products offered for people new to Bamazon, and another to begin the shopping experience: 
 
-![Alt text](Images/intro.jpg?raw=true "Intro to Bamazon App")
+![Alt text](Images/intro.png?raw=true "Intro to Bamazon App")
 
 # Product List
 
 If the customer chooses to see a list of products, the app reaches into the created SQL database and retrieves a list of the products' ID numbers, names, departments, prices, and quantity available:
 
-![Alt text](Images/product_list.jpg?raw=true "Intro to Bamazon App")
+![Alt text](Images/product_list.png?raw=true "Intro to Bamazon App")
 
 # Start Shopping
 
 If the customer chooses to begin shopping instead, or decides to shop after seeing the product list, they are asked to enter a product ID number and the quantity of that item they would like to purchase:
 
-![Alt text](Images/start_shopping.jpg?raw=true "Intro to Bamazon App")
+![Alt text](Images/start_shopping.png?raw=true "Intro to Bamazon App")
 
 # Below Stock Quantity
 
 If the amount purchased is lower than the amount of the product that is available, the customer is given a thank you message with the price of the items chosen, and then are asked whether they would like to continue shopping: 
 
-![Alt text](Images/after_purchase.jpg?raw=true "Intro to Bamazon App")
+![Alt text](Images/after_purchase.png?raw=true "Intro to Bamazon App")
 
 # Over Stock Quantity
 
 If the amount purchased is greater than the amount of the product that is available, the customer is given the option to purchase a different amount, purchase a different product, or end their shopping experience: 
 
-![Alt text](Images/over_quantity.jpg?raw=true "Intro to Bamazon App")
+![Alt text](Images/over_quantity.png?raw=true "Intro to Bamazon App")
 
 Choosing to choose a different product or amount resets their shopping experience: 
 
-![Alt text](Images/if_new_choice.jpg?raw=true "Intro to Bamazon App")
+![Alt text](Images/if_new_choice.png?raw=true "Intro to Bamazon App")
 
 # Ending the Shopping Experience
 
 If the user chooses to end their shopping experience after purchasing or if they ask for more than is available, they are given a thank you message and the app ends: 
 
-![Alt text](Images/stop_shopping.jpg?raw=true "Intro to Bamazon App")
+![Alt text](Images/stop_shopping.png?raw=true "Intro to Bamazon App")
