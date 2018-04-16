@@ -1,10 +1,15 @@
 # bamazon-app
 This introductory project to SQL and node creates an Amazon-esque app on a small scale. Functions of the app include displaying a list of current stock and the properties related to them, and future updates will include managerial and departmental components to simulate an actual business model. 
 
+# Summation
+
+This app replicates an online store such as Amazon or Ebay in order to show the power of database use at a very simple level. Future updates will include a Manager and Regional application that allows for greater manipulation of the database and control over inventory and pricing including configuring overhead costs and managing "success" of various departments.
+
 # Intro
 
 To begin, the app welcomes you and gives you two options: One to see a list of all of the products offered for people new to Bamazon, and another to begin the shopping experience: 
 
+![Alt text](Pictures/Screenshots/MySQL-HW/intro.png?raw=true "Intro")
 
 # Product List
 
