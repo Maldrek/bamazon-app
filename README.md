@@ -9,6 +9,10 @@ This app replicates an online store such as Amazon or Ebay in order to show the 
 
 This application uses JavaScript (Node.js) and mySQl as its database.
 
+<h2>Setup in SQL</h2>
+
+![SQL Setup](images/SQL_setup.png?raw=true "Intro to Bamazon App")
+
 <h2>Intro</h2>
 
 To begin, the app welcomes you and gives you two options: One to see a list of all of the products offered for people new to Bamazon, and another to begin the shopping experience: 
