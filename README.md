@@ -13,7 +13,7 @@ This application uses JavaScript (Node.js) and mySQl as its database.
 
 To begin, the app welcomes you and gives you two options: One to see a list of all of the products offered for people new to Bamazon, and another to begin the shopping experience: 
 
-![Intro to Bamazon App](images/intro.png?raw=true "Intro to Bamazon App")
+![Intro to Bamazon App](images/Intro.png?raw=true "Intro to Bamazon App")
 
 <h2>Product List</h2>
 
