@@ -113,8 +113,8 @@ function promptCustomer() {
                                 message: "I'm sorry, we don't currently have enough in stock to fill your order. How would you like to proceed?",
                                 choices: ["Purchase a different quantity", "Purchase a different product", "Stop shopping"]
                             }
-                        ]).then(function () {
-                            if (tooMany === "Purchase a different quantity" || tooMany === "Purchase a different product" ) {
+                        ]).then(function (overQuantity) {
+                            if (overQuantity.tooMany === "Purchase a different quantity" || overQuantity.tooMany === "Purchase a different product" ) {
                                 promptCustomer();
                             } else {
                                 console.log("Thank you for visiting Bamazon! Have a wonderful day!");
