@@ -11,44 +11,44 @@ This application uses JavaScript (Node.js) and mySQl as its database.
 
 <h2>Setup in SQL</h2>
 
-![SQL Setup](images/SQL_setup.png?raw=true "Intro to Bamazon App")
+![SQL Setup](images/SQL_setup.png)
 
 <h2>Intro</h2>
 
 To begin, the app welcomes you and gives you two options: One to see a list of all of the products offered for people new to Bamazon, and another to begin the shopping experience: 
 
-![Intro to Bamazon App](images/Intro.png?raw=true "Intro to Bamazon App")
+![Intro to Bamazon App](images/Intro.png)
 
 <h2>Product List</h2>
 
 If the customer chooses to see a list of products, the app reaches into the created SQL database and retrieves a list of the products' ID numbers, names, departments, prices, and quantity available:
 
-![SQL Product List](images/product_list.png?raw=true "SQL Product List")
+![SQL Product List](images/product_list.png)
 
 <h2>Start Shopping</h2>
 
 If the customer chooses to begin shopping instead, or decides to shop after seeing the product list, they are asked to enter a product ID number and the quantity of that item they would like to purchase:
 
-![Beginning of Shopping Experience](images/start_shopping.png?raw=true "Beginning of Shopping Experience")
+![Beginning of Shopping Experience](images/start_shopping.png)
 
 <h2>Within Stock Quantity</h2>
 
 If the amount purchased is lower than the amount of the product that is available, the customer is given a thank you message with the price of the items chosen, and then are asked whether they would like to continue shopping: 
 
-![After Purchase Options](images/after_purchase.png?raw=true "After Purchase Options")
+![After Purchase Options](images/after_purchase.png)
 
 <h2>Over Stock Quantity</h2>
 
 If the amount purchased is greater than the amount of the product that is available, the customer is given the option to purchase a different amount, purchase a different product, or end their shopping experience: 
 
-![Over Quantity Response](images/over_quantity.png?raw=true "Over Quantity Response")
+![Over Quantity Response](images/over_quantity.png)
 
 Choosing to choose a different product or amount resets their shopping experience: 
 
-![Shopping Reset](images/if_new_choice.png?raw=true "Shopping Reset")
+![Shopping Reset](images/if_new_choice.png)
 
 <h2>Ending the Shopping Experience</h2>
 
 If the user chooses to end their shopping experience after purchasing or if they ask for more than is available, they are given a thank you message and the app ends: 
 
-![End Shopping Image](images/stop_shopping.png?raw=true "End Shopping Image")
+![End Shopping Image](images/stop_shopping.png)
