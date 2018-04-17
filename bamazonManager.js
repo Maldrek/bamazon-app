@@ -15,17 +15,20 @@ let connection = mysql.createConnection({
     database: "bamazon"
 });
 
+// Checking connection to mySQL and then initializing Node.js and beginning function
 connection.connect(function (err, data) {
     if (err) throw err;
     welcome();
 });
 
+// Welcome message that then calls to the managerChoices function
 function welcome() {
     console.log("Welcome, Bamazon manager!");
     console.log("");
     managerChoices();
 }
 
+// This function offers four choices for the manager. Each choice calls to its own specific functions
 function managerChoices() {
     inquirer.prompt([
         {
@@ -34,6 +37,8 @@ function managerChoices() {
             message: "What would you like to do today?",
             choices: ["View Products", "View Low Inventory", "Add Inventory", "Add New Product"]
         }
+
+    // Depending on the user choice, the relating function is called
     ]).then(function (choice) {
         let decision = choice.taskOne;
         if (decision === "View Products") {
@@ -48,6 +53,7 @@ function managerChoices() {
     })
 }
 
+// This function loops through the SQL database and displays the product information. Then calls the anythingElse function
 function productView() {
     connection.query("SELECT * FROM bamazon_products", function (err, data) {
         if (err) throw err;
@@ -60,7 +66,10 @@ function productView() {
     });
 }
 
+// This function acts as the reset function for the app and is called to by the four main functions
 function anythingElse() {
+
+    // Asks the user if they have more business on the app
     inquirer.prompt([
         {
             type: "list",
@@ -68,9 +77,13 @@ function anythingElse() {
             message: "Is there anything else you would like to do?",
             choices: ["Yes", "No"]
         }
+
+    // If the user chooses "Yes", then managerChoices function is called
     ]).then(function (redo) {
         if (redo.goBack === "Yes") {
             managerChoices();
+        
+        // If "No", then the app is ended
         } else {
             console.log("Thank you for your great management! Have a great day!");
             connection.end();
@@ -78,6 +91,7 @@ function anythingElse() {
     });
 }
 
+// This function takes all inventory with stock equal to or less than 5, then displays them
 function lowInventory() {
     connection.query("SELECT * FROM bamazon_products", function (err, data) {
         if (err) throw err;
@@ -87,6 +101,8 @@ function lowInventory() {
                 console.log(data[i].id + " | " + data[i].product_name + " | " + data[i].department_name + " | Inventory left: " + data[i].stock_quantity);
             }
         }
+
+        // This prompt asks the user if they would like to add inventory to the low inventory items
         console.log("");
         inquirer.prompt([
             {
@@ -96,8 +112,12 @@ function lowInventory() {
                 choices: ["Yes", "No"]
             }
         ]).then(function (restock) {
+
+            // if "Yes", then calls the addInventory function
             if (restock.inventoryChoice === "Yes") {
                 addInventory();
+
+            // if "No", then calls the anythingElse function
             } else {
                 anythingElse();
             }
@@ -109,6 +129,9 @@ function lowInventory() {
 function addInventory() {
     connection.query("SELECT * FROM bamazon_products", function (err, data) {
         console.log("");
+
+        // This prompt lets the user choose which item they will add more of by looping through the low inventory
+        // and putting those choices into an array of 'choices'
         inquirer.prompt([
 
             {
@@ -125,6 +148,8 @@ function addInventory() {
                     return choiceArray;
                 }
             },
+
+            // Then the user can choose how many of that item to add back into the database
             {
                 type: "input",
                 name: "addNumber",
@@ -167,7 +192,10 @@ function addInventory() {
     });
 };
 
+// This function allows the user to create an entirely new product
 function newProduct() {
+
+    // The prompt allows the user to input the name, department, price, and quantity of the new item
     inquirer.prompt([
         {
             type: "input",
@@ -189,6 +217,8 @@ function newProduct() {
             name: "newItemQuantity",
             message: "How many of this item should we stock?"
         }
+
+    // This function takes the user info set before and updates the SQL database
     ]).then(function (adding) {
         connection.query(
             "INSERT INTO bamazon_products SET ?",
@@ -198,6 +228,8 @@ function newProduct() {
                 price: adding.itemPrice,
                 stock_quantity: adding.newItemQuantity
             },
+            
+            // This function sends a message showing that the user has added the item and then calls the anythingElse function
             function (err, res) {
                 if (err) throw err;
                 console.log("Thank you! You have added " + adding.newItemQuantity + " of item: " + adding.itemName + " in dept: " + adding.itemDepartment + " at price: $" + adding.itemPrice);
