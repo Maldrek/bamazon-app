@@ -96,4 +96,4 @@ In this function, the user is prompted to input the name, department name, price
 
 If at any time the user chooses the "no" option after being asked if they had more business to do while on the app, they are given a thank you message and the application is ended:
 
-[Manager End Application](images/manager_end_app.PNG)
+![Manager End Application](images/manager_end_app.PNG)
